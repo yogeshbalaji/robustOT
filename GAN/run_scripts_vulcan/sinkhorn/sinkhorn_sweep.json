@@ -1,0 +1,19 @@
+{
+  "job_name": "sinkhorn",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main_sinkhorn.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 8,
+  "memory": "12GB",
+  "gpus_per_task": 1,
+  "time": "2500m",
+  "args": [
+    ["base_cfg_path", ["configs/experiments/CIFAR10_MNIST.json"]],
+    ["cfg_path", ["configs/unconditional/resnet_WGAN_sinkhorn.json"]],
+    ["anomaly_frac", [0.0]],
+    ["eta", [0.25, 0.5, 1.0, 3.0]],
+    ["num_sinkhorn_iters", [5, 10, 20]],
+    ["run_id", [0]]
+  ]
+}

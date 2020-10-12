@@ -1,0 +1,20 @@
+{
+  "job_name": "sweep1",
+  "setup_script": "run_scripts_cml/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 5,
+  "memory": "12GB",
+  "gpus_per_task": 1,
+  "time": "2500m",
+  "args": [
+    ["cfg-path", ["configs/adversarial.json",
+                  "configs/robust_adversarial.json"]],
+    ["ano_type", [2]],
+    ["rho", [0.3]],
+    ["ent_weight", [0.0]],
+    ["logdir", ["results/frac1_1"]],
+    ["model", ["resnet18"]]
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "job_name": "rho_sweep_CIFARMNIST_resnet2",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 5,
+  "memory": "16GB",
+  "gpus_per_task": 1,
+  "time": "2500m",
+  "args": [
+    ["base_cfg_path", ["configs/experiments/CIFAR10_MNIST.json", 
+                       "configs/experiments/CIFAR10_uniform.json"]],
+    ["cfg_path", ["configs/unconditional/resnet_WGAN.json"]], 
+    ["anomaly_frac", [0.05, 0.1]], 
+    ["weight_update", [1]],
+    ["weight_update_type", [1]],
+    ["weight_update_iters", [5]],
+    ["rho", [0.05, 0.1]], 
+    ["run_id", [0, 1]]
+  ]
+}

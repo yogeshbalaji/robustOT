@@ -1,0 +1,20 @@
+{
+  "job_name": "baseline_domainnet",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 5,
+  "memory": "12GB",
+  "gpus_per_task": 2,
+  "time": "3600m",
+  "args": [
+    ["base_cfg_path", ["configs/experiments/DomainNet.json"]],
+    ["cfg_path", ["configs/unconditional/resnet_WGAN.json", 
+                  "configs/unconditional/resnet_SNGAN.json"]], 
+    ["anomaly_frac", [0.0]], 
+    ["weight_update", [0]],
+    ["weight_update_type", [0]], 
+    ["run_id", [0]]
+  ]
+}

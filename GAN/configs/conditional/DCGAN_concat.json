@@ -1,0 +1,42 @@
+{
+  "logdir": "results/conditional/DCGAN_concat/",
+  "mode": "train",
+
+  "netG": "DCGAN",
+  "netD": "DCGAN",
+  "conditional": true,
+  "nz": 128,
+  "ngf": 64,
+  "ndf": 64,
+  "nc": 3,
+  "G_conv": "convT",
+  "G_normalization": "BN",
+  "G_activation": "relu",
+  "G_linear": "linear",
+  "D_conv": "conv",
+  "D_normalization": "BN",
+  "D_activation": "lrelu",
+  "D_linear": "linear",
+  "projection_dim": 128,
+  "conditioning": "concat",
+  "regularization": "",
+  "gp_lamb": 10,
+  "ortho_strength": 0.0001,
+
+  "disc_iters": 1,
+  "loss": "ns",
+
+  "batchSize": 64,
+  "nepochs": 300,
+  "lrG": 0.0002,
+  "lrD": 0.0002,
+  "beta1D": 0.5,
+  "beta1G": 0.5,
+
+  "use_ema": false,
+  "save_every": 20000,
+  "log_every": 100,
+  "test_every": 1000,
+  "test_inception_every": 15000,
+  "num_inception_imgs": 50000
+}

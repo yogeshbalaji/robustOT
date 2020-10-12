@@ -1,0 +1,16 @@
+{
+  "job_name": "VISDA17_sourceonly",
+  "setup_script": "run_scripts_cml/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 10,
+  "memory": "16GB",
+  "gpus_per_task": 2,
+  "time": "2500m",
+  "args": [
+    ["cfg-path", ["configs/sourceonly.json"]],
+    ["method", ["sourceonly"]],
+    ["model", ["resnet18", "resnet50", "resnet101"]]
+  ]
+}

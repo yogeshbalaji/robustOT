@@ -1,0 +1,17 @@
+{
+  "job_name": "WGAN_resnet_baseline_sweep",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 10,
+  "memory": "16GB",
+  "gpus_per_task": 2,
+  "time": "2500m",
+  "args": [
+    ["cfg_path", ["configs/unconditional/resnet_WGAN.json"]], 
+    ["anomaly_frac", [0.0, 0.025, 0.05, 0.075, 0.1]], 
+    ["weight_update", [0]], 
+    ["run_id", [0, 1, 2]]
+  ]
+}

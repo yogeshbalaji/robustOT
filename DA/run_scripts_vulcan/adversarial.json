@@ -1,0 +1,24 @@
+{
+  "job_name": "adversarial_sweep",
+  "setup_script": "run_scripts_cml/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 4,
+  "memory": "16GB",
+  "gpus_per_task": 2,
+  "time": "1500m",
+  "args": [
+    ["dataroot", ["/cmlscratch/yogesh22/data/VISDA19/"]],
+    ["dataset", ["multi_all"]],
+    ["source", ["real"]],
+    ["target", ["sketch"]],
+    ["net", ["resnet34"]],
+    ["checkpath", ["results"]],
+    ["method", ["adversarial"]],
+    ["disc_size", [3]],
+    ["critic_iters", [10000]],
+    ["grad_reverse", [0, 1]],
+    ["disc_adam", [0, 1]]
+  ]
+}

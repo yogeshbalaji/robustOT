@@ -1,0 +1,17 @@
+{
+  "job_name": "GAN_baseline_sweep_sub",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 10,
+  "memory": "16GB",
+  "gpus_per_task": 1,
+  "time": "2500m",
+  "args": [
+    ["cfg_path", ["configs/conditional/SNGAN_projection.json"]], 
+    ["anomaly_frac", [0.0, 0.1, 0.2]], 
+    ["weight_update", [0]], 
+    ["run_id", [0, 1]]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "job_name": "GAN_robust_DCGAN",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 10,
+  "memory": "16GB",
+  "gpus_per_task": 1,
+  "time": "2500m",
+  "args": [
+    ["cfg_path", ["configs/unconditional/WGAN.json", 
+                 "configs/unconditional/SNGAN.json"]], 
+    ["anomaly_frac", [0.0]], 
+    ["weight_update", [1]],
+    ["rho", [0.01, 0.02, 0.03, 0.05]], 
+    ["run_id", [0]]
+  ]
+}

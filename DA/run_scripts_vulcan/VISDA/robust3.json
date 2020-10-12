@@ -1,0 +1,20 @@
+{
+  "job_name": "VISDA17_3",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 5,
+  "memory": "12GB",
+  "gpus_per_task": 1,
+  "time": "2500m",
+  "args": [
+    ["cfg-path", ["configs/robust_adversarial.json"]],
+    ["rho", [0.05]],
+    ["ent_weight", [0.0]],
+    ["vat_weight", [0.0]],
+    ["logdir", ["results"]],
+    ["run_id", [0, 1, 2]],
+    ["model", ["resnet50"]]
+  ]
+}

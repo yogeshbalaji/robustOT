@@ -1,0 +1,24 @@
+{
+  "dataroot": "/vulcan/scratch/yogesh22/data/domain_adaptation/",
+  "dataset": "VISDA17",
+  "num_iters": 25000,
+  "exp": "closedset",
+  "method": "sourceonly",
+  "anomaly_class": "other",
+  "ano_type": 1,
+
+  "model": "resnet18",
+  "batchSize": 32,
+  "lr": 0.0005,
+  "lrC": 0.0005,
+  "optimizer": "sgd",
+  "momentum": 0.9,
+  "ent_weight": 0.0,
+  "vat_weight": 0.0,
+
+  "logdir": "results",
+  "log_interval": 100,
+  "save_interval": 1000,
+  "sep_bn": 0,
+  "rho": 0.0
+}

@@ -1,0 +1,17 @@
+{
+  "job_name": "WGAN_weight",
+  "setup_script": "run_scripts_vulcan/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 10,
+  "memory": "16GB",
+  "gpus_per_task": 2,
+  "time": "2500m",
+  "args": [
+    ["cfg_path", ["configs/unconditional/WGAN.json", "configs/unconditional/resnet_WGAN.json"]], 
+    ["anomaly_frac", [0.0]], 
+    ["weight_update", [0, 1]], 
+    ["run_id", [0, 1, 2]]
+  ]
+}
